@@ -1,0 +1,66 @@
+---
+title: A Simple Scala DSL
+date: 2013-05-29
+---
+#+TITLE: A Simple Scala DSL
+
+
+A simple example of how to use Scala to construct a domain specific language (DSL). 
+We will be building a DSL to provide a superset of functionality specific to mixing up liquids.
+
+Here is how it would be used -
+
+#+BEGIN_SRC scala
+val solvent = new Substance("Water")
+val alcohol = new Substance("Ethanol", cost=50)
+val colouring = new Substance("Tartrazine", cost=150)
+val solution = 2.l of solvent containing (200.ml of alcohol, 
+                                          2.drops of colouring)
+val totalCost = solution.cost
+#+END_SRC
+
+The solvent and solutes are of our type Substance which is a pretty boring class with just a name and a cost as properties.
+
+The solution in this case is just a standard scala List but it is cast
+to a new helper object as and when needed. Likewise the same behaviour
+is used for turning numbers into volumes of liquid. 
+
+This is done by using a package object holding functions that handle implicit conversions. Like so -
+
+#+BEGIN_SRC scala
+package object chem { 
+  import language.{implicitConversions,postfixOps}
+  import math.Numeric
+  implicit def numericToSubstanceNumberHelper[A](num : A)
+    (implicit numeric : Numeric[A]) = 
+      new SubstanceNumberHelper(numeric.toDouble(num))
+
+  class SubstanceNumberHelper(qty : Double) { 
+    def drops = qty * 0.005
+    def ml = qty * 0.001
+    def l = qty
+    def of(substance : Substance) = SubstanceAmount(substance, qty)
+  }
+
+  implicit def substanceListHelper(list : List[SubstanceAmount]) = 
+    new SubstanceListHelper(list)
+  class SubstanceListHelper(list : List[SubstanceAmount]) { 
+    def cost = list.map(_.cost).sum
+  }
+}
+#+END_SRC
+
+The method =numericToSubstanceNumberHelper= could be repeated several
+times, once for each type of numeric field you might want to convert
+but the above curried function is more compact. It first takes an
+argument of any type then an implicit Numeric object is used to
+convert the number into a double.  
+
+What is interesting about using this method to convert the argument
+into a double is that although the method defines an argument of any
+type it is infact still typesafe, for instance the following would not
+compile - 
+
+#+BEGIN_SRC scala
+blah.ml
+#+END_SRC

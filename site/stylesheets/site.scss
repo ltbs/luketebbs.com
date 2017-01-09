@@ -1,0 +1,12 @@
+@import "variables";
+@import "bootswatch";
+@import "bootstrap";
+
+h1.title {
+	 padding-top:1em;
+}
+
+table, th, td {
+   border: 1px solid black;
+   padding: 5px;
+} 

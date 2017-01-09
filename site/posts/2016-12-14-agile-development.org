@@ -1,0 +1,231 @@
+---
+title: Agile Development in Large Organisations
+---
+
+Computing is one of the few disciplines where its entire history could
+be encompassed in the lifespan of a single person, and given that
+within a few years the entire ecosystem of technologies that underpin
+the industry can change radically it should come as no surprise that
+the methodologies are equally transient. 
+
+Agile development, and more specifically Scrum and XP seem to be the
+current dominant methodologies and in this post I want to discuss what
+that means generally but also more specifically for large
+organisations. 
+
+I've noticed that most of the people who speak a lot about Agile are
+'expert non-practicioners' when it comes to programming, who either
+have programmed a long time ago but not actively anymore or are direct
+from a management background. 
+
+Conversely world-renowned programmers and computer scientists are
+generally mute on the subject --- I've yet to read anything written by
+Torvalds, Knuth or Dijkstra on the topic of Agile development --- and
+working developers seem to be rather divided in private on the virtues
+of Agile but sometimes feel pressured to extoll the methodologies
+publicly. 
+
+If this post sounds like a bitter criticism of Agile then I've missed
+the mark, for my part I've experienced good and bad projects under
+numerous software development approaches including Agile and Waterfall
+and I think the success of a project comes down more to the project
+having a stable base (adequately mature technologies, maximum
+automation, skilled people, sufficient time to experiment, etc).
+
+* My pet-peeves with 'Hard-Agile'
+
+** Hyperbole
+
+It seems that some organisations take to making press-releases
+claiming incredulous increases in productivity. Perhaps I'm just cynical here
+but I suspect that some of these figures are just made up to appease
+investors. If I'm doing any given activity which takes a significant
+proportion of my time and you could offer me something which increases
+productivity by 5% I'd bite your arm off, but if you tell me that it
+will immediately increase productivity by 500% I'd have to assume
+either I'm doing something very very seriously wrong or you're lying
+to me.  
+
+In any other industry a claim of a 5-gazillion percent performance
+improvement would probably be laughed at, but I can see how it might
+be taken seriously in Software Development given the sheer variance in
+the speed at which individual developers work at and also the way
+projects are affected seemingly by the way the wind is blowing. 
+
+An ace
+developer who cranked out an amazing piece of software in a week can
+spend years languishing as part of a large team trying to complete a
+project, so it is easy to rationalise (perhaps the stakeholders were
+indecisive or the technology immature) and apply those
+rationalisations to other projects without knowledge of the details of
+those projects.
+
+** Anti-intellectualism and intransience
+
+The hyperbole leads to the 'one true path' fallacy familiar to
+mysticism and martial arts --- if you're applying Agile and you're not
+getting 5-gazillion percent productivity increase, then you're doing
+it wrong. You need to be more agile, and try harder or perhaps your
+programmers just don't get agile. 
+
+Programmers themselves seem to have rather mixed views on Agile, and
+personally I'm on the fence. But to tell an agile advocate you're
+undecided on a particular approach is often to invite evangelism or
+derision. The assumption will often be that 1) you've not used agile,
+or if you have that 2) you've not used the evangelists flavour of agile,
+or if you have that 3) you've not used it correctly. 
+
+Point 3 is of course a fair one seeing as I've never actually worked
+anywhere where Scrum is done 'by the book', but then again isn't the
+whole point of Agile flexibility and adapting to the real-world of
+shifting requirements rather than expecting the real world to come to
+us? 
+
+I think most programmers subscribe to a form of empiricism if not
+falsificationism and reductionism, and therefore they want evidence
+and reason, they want a compound system to be reduced down into its
+components so each can be examined in turn. By contrast Scrum does not want to be
+reduced down --- it's all or nothing ("Scrum's roles, artifacts,
+events, and rules are immutable and although implementing only parts
+of Scrum is possible, the result is not Scrum. Scrum exists only in
+its entirety."). Why?
+
+Evidence and reason also tends to be fairly light on the ground, for
+example pair programming is often cited as a 'must-do' programming
+practice in Agile circles, to the extent that some organisations
+arrange their desks to place engineers as close to each other as
+possible ostensibly in order to foster more collaboration --- the
+theory being that the closer the developers work the better the
+development process goes. I received an email once from the centers
+Lead Scrum-Master instructing all developers to pair program and that
+anyone not 'understanding the benefits' of pair programming should report to
+them. Passive-aggressive undertones aside, there are world-class developers who
+are very private and advocate solitude as a way of working. The
+most notable probably being Linus Torvalds. There is also no empirical
+evidence that I have seen to prove that pair-programming is
+universally beneficial to programmer productivity nor code
+quality. Meta-studies appear to suggest that in some cases it helps
+(mainly in skills transferrence as you would expect), but in others it
+hinders --- sometimes considerably.
+
+** Denial of specialisation and dependencies
+
+According to the Scrum Guide, 'Scrum recognizes no titles for
+Development Team members other than Developer'. Developers are
+interchangable and pair-programming should cause sufficient
+cross-pollination of skills to ensure there is no indespensible person
+on the team. 
+
+Real development team members however often /do/ have deep
+specialisations, so we see Scrum teams with Graphic Designers, UX
+designers, content authors, dedicated Scrum Masters, Business
+Analysts, Pen-testers, QA analysts, subject matter experts, etc,
+working alongside developers. 
+
+Often the developers cannot create the web-form until the Business
+Analyst has spoken to the client and the designers have produced
+the wireframe design, for example. 
+
+This leads to planning weirdness where each discipline is giving an
+estimate for the number of story-points from their perspective which
+is summed up then rounded to the nearest fibonnaci number and a dev
+cannot begin a task on the story board until 2/3 of the way through
+the sprint.
+
+** Management rebranded
+
+Agile and Scrum are meant to be empowering for developers by clearly
+laying out the working process and decentralising the communication,
+but in practice it can simply result in more a new layers of management
+materialising, some defacto and some dejure. 
+
+In many cases the Scrum
+Master becomes a defacto 'manager-lite', often without the experience to
+handle a nuanced role in a way that is helpful to the team and instead
+resorting to delegation and micromanagement. 
+
+Large organisations typically have a deep management structure, many
+of whom neither know nor care about software development
+methodologies. Scrum requires the active participation of the
+stakeholders and the team being empowered to question the assumptions
+of the stakeholders. 
+
+In a large organisation the real stakeholders may
+be several layers of management up from the development team and as
+such do not have the time to liase with the team. As such they will
+often appoint representatives. These representatives will often not be
+able to say 'no' to their boss, leading to both requirements being
+dictated by Chinese-whispers and cherry picking the aspects of Scrum
+which are deemed acceptible to upper management. 
+
+For example some scrum teams are unable to declare a sprint to be
+failed in the event of a change of the sprint goal mid-sprint for the
+reason of not upsetting the chain-of-command. In many cases the upper
+managers would likely be sympathetic but lack the time to become
+familiar with the way the development team works. 
+
+** Feedback Loop of Tactical Estimation and Bad Planning
+
+An ugly feedback loop can occur with Scrum where developers are not
+able to kick back tasks that are not sprint-ready. Instead they may 
+compensate by factoring in more time both to add more detail to the
+story mid-sprint or simply as a contingency. Not knowing how much
+buffer to add it is better to add as much as possible, so the task
+gets assigned a  number of story-points based upon the worst-possible
+scenario. This reflects well on the developer as they typically
+complete the task much faster than predicted, it works well for the
+BA's and others as it means they spend less time typing into Jira,
+writing out cards or on the phone to SME's and it looks good for the
+team as velocity goes up sprint-by-sprint. 
+
+Inside the team there is also the possibility of rewarding bad
+behaviour at the expense of the team if story points are used as a
+metric of progress. Avoiding helping peers, taking on 'easy-win'
+tasks and dodging the difficult tasks are possible avenues as well as
+the traditional 'job security' approaches of writing illegible code and
+not documenting it. 
+
+Example meatspace analogies might be in genetics where a trait
+occurs that benefits the individual at the expense of the species or
+the principle agent problem in economic theory.
+
+** Unwillingness to learn from Libre and Open Source projects 
+
+Scrum works best with a small colocated team all with the same
+job-title. 
+The Debian Project has thousands of developers working on different
+timezones who speak different languages and with vastly different
+skillsets. What are they doing that we are not?
+
+* Proposals 
+
+- understanding of dependencies (CPA)
+- empiricism
+  - time not t-shirt sizes
+- reductionism and axiomatisation
+  - these problems might look very different but are they in some way
+    the same?
+- avoid the 'Not Invented Here' syndrome
+  - don't go inventing your own crypto libraries
+- admit that productivity may vary but 'iron triangle' still exists
+  - inherent tradeoffs in some areas
+    - more pronounced in the short term
+- some technical, but non-elitist, management
+  - some non-technical managers can still be very effective
+- culture of technical excellence
+  - lots of brown-bag sessions
+  - don't punish people for disagreeing
+    - proof and demonstration matters more than clever arguments or incumbency 
+  - avoid slipping into faddism
+  - development methodologies are there to support development - not
+    the other way around!
+- lots of slack in schedules
+  - the more I rush the longer I take
+- acknowledge some projects might not be suited for Scrum
+  - N versus NP is not a spike!
+  - Complex dependencies
+  - Precise non-flexible requirements - the cooling system for the reactor is definitely part of the 'MVP'!
+- Regular audit of technical debt
+  - quantify if at all possible
+  - craftmanship is more important than features
+  - should not be punitive, otherwise devs may push bad code under the rug

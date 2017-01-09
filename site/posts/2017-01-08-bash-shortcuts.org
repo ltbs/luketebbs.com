@@ -1,0 +1,22 @@
+---
+title: Handy Bash Shortcuts
+---
+
+Here are some handy bash keyboard shortcuts to make your life easier - 
+
+| Key    | Meaning                                             |
+|--------+-----------------------------------------------------|
+| CTRL+a | Jump to beginning of line                           |
+| CTRL+e | Jump to end of line                                 |
+| CTRL+j | Return (same as pressing ENTER)                     |
+| CTRL+t | Translate (swap) two characters                     |
+| ALT+t  | Translate (swap) two words                          |
+| CTRL+b | Move back one word (save as arrow key)              |
+| CTRL+f | Move forward one word (save as arrow key)           |
+| ALT+b  | Move back one word                                  |
+| ALT+f  | Move forward one word                               |
+| CTRL+d | Delete forward one character (same as pressing del) |
+| CTRL+h | Delete backward one character (same as backspace)   |
+| ALT+d  | Delete forward one word                             |
+| CTRL+y | Paste (yank) deleted content                        |
+

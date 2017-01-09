@@ -1,0 +1,7 @@
+** Other 
+Many people have evolved their own techniques for managing
+their time. I tend to use emacs [[http://orgmode.org/][org mode]] with a series of files
+modelled loosely around a [[https://en.wikipedia.org/wiki/Getting_things_done][GTD]] setup. This for me is a really smooth
+way of organising the work I need to do. However most developers will
+be expected the  I
+have to use [[https://en.wikipedia.org/wiki/Jira_(software)][JIRA]] (which I regard as an absolute abomination). 
