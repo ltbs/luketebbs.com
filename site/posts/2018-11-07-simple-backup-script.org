@@ -1,0 +1,54 @@
+---
+title: Simple Backup Script
+---
+
+#+BEGIN_SRC sh
+#!/usr/bin/env bash
+
+set -e
+
+# Check we have two arguments
+if (( $# != 2 ))
+then
+    echo "Usage: $0 SOURCE BACKUPDIR" >&2
+    exit 1
+fi
+
+source=$1
+backupdir=$2
+now=$(date +'%Y/%m-%B/%d-%a/%H/%M')
+
+if [ -e $backupdir/.lock ]
+then
+    echo "Lockfile found at $backupdir/.lock" >&2
+    echo "Is there another process ($(cat $backupdir/.lock)) running?" >&2    
+    exit 2
+fi
+
+if [ -e $backupdir/$now ]
+then
+    echo "Backup target dir ($backupdir/$now) already exists " >&2    
+    exit 3
+fi
+
+if [ ! -d $source ]
+then
+    echo "$source doesn't exist, or is not a directory" >&2    
+    exit 4
+fi
+
+echo $$ > $backupdir/.lock
+mkdir -p $backupdir/$now
+
+if [ -e $backupdir/last ]
+then
+    rsync -a --link-dest=$(readlink -f $backupdir/last) $source $backupdir/$now
+    rm $backupdir/last
+else
+    rsync -a $source $backupdir/$now
+fi
+ln -s ./$now $backupdir/last
+
+rm $backupdir/.lock
+#+END_SRC
+
